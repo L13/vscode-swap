@@ -2,7 +2,7 @@
 	"name": "l13-swap",
 	"displayName": "L13 Swap",
 	"description": "Invert or rotate keywords in JavaScript and TypeScript",
-	"version": "0.13.0",
+	"version": "0.14.0",
 	"publisher": "L13RARY",
 	"license": "SEE LICENCE IN LICENCE.md",
 	"preview": true,

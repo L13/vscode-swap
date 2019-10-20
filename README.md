@@ -1,6 +1,13 @@
 # L13 Swap
 
-Invert or rotate keywords in JavaScript and TypeScript
+Invert or rotate keywords in JavaScript and TypeScript.
+
+This extension is part of the [L13 Extension Pack](https://marketplace.visualstudio.com/items?itemName=L13RARY.l13-extension-pack).
+
+## What's new in L13 Swap 0.14.0
+
+- Added support for JSON and JSONC.
+- Added support for JavaScript React and TypeScript React.
 
 ## Features
 

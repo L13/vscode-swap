@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to the "L13 Swap" extension will be documented in this file.
 
+## [0.14.1] - 2019-05-20
+
+### Changed
+- Updated dev dependencies.
+
 ## [0.14.0] - 2019-10-20
 
 ### Added

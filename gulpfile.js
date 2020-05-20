@@ -33,6 +33,11 @@ gulp.task('script', () => {
 
 	return rollup.rollup({
 		input: 'src/extension.ts',
+		external: [
+			'fs',
+			'path',
+			'vscode',
+		],
 		plugins: [
 			typescript({
 				target: 'es6',
@@ -48,8 +53,13 @@ gulp.task('script', () => {
 
 		return bundle.write({
 			file: './out/extension.js',
-			format: 'umd',
+			format: 'cjs',
 			name: 'l13swap',
+			globals: {
+				fs: 'fs',
+				path: 'path',
+				vscode: 'vscode',
+			},
 		});
 
 	});

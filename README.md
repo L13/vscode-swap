@@ -1,13 +1,17 @@
-# L13 Swap
+# Swap Keywords
 
 Invert or rotate keywords in JavaScript and TypeScript.
 
-This extension is part of the [L13 Extension Pack](https://marketplace.visualstudio.com/items?itemName=L13RARY.l13-extension-pack).
+## What's new in Swap Keywords 0.14.2
 
-## What's new in L13 Swap 0.14.0
+- Changed display name from `L13 Swap` to `Swap Keywords`.
 
-- Added support for JSON and JSONC.
-- Added support for JavaScript React and TypeScript React.
+## Index
+
+1. [Features](#features)
+1. [Available Commands](#available-commands)
+1. [Keyboard Shortcuts](#keyboard-shortcuts)
+1. [Recommended Extensions](#recommended-extensions)
 
 ## Features
 
@@ -32,3 +36,8 @@ This extension is part of the [L13 Extension Pack](https://marketplace.visualstu
 * `Ctrl + Shift + I` -> Rotate Keyword
 
 If the key bindings don't work, please check `Preferences -> Keyboard Shortcuts`.
+
+## Recommended Extensions
+
+- [JavaScript and TypeScript Snippets](https://marketplace.visualstudio.com/items?itemName=L13RARY.l13-js-snippets)
+- [Extension Pack](https://marketplace.visualstudio.com/items?itemName=L13RARY.l13-extension-pack)

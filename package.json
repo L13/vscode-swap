@@ -1,11 +1,10 @@
 {
 	"name": "l13-swap",
-	"displayName": "L13 Swap",
+	"displayName": "Swap Keywords",
 	"description": "Invert or rotate keywords in JavaScript and TypeScript",
-	"version": "0.14.1",
+	"version": "0.14.2",
 	"publisher": "L13RARY",
 	"license": "SEE LICENCE IN LICENCE.md",
-	"preview": true,
 	"homepage": "https://github.com/l13/vscode-swap/blob/master/README.md",
 	"repository": {
 		"type": "git",

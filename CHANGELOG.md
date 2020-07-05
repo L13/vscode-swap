@@ -1,5 +1,10 @@
 # Change Log
-All notable changes to the "L13 Swap" extension will be documented in this file.
+All notable changes to the "Swap Keywords" extension will be documented in this file.
+
+## [0.14.2] - 2019-07-05
+
+### Changed
+- Changed display name from `L13 Swap` to `Swap Keywords`.
 
 ## [0.14.1] - 2019-05-20
 

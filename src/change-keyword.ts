@@ -9,19 +9,21 @@ import { SimpleMap } from './types';
 //	Variables __________________________________________________________________
 
 const inverters = {
-	json: createKeywordMap('./inverters/json.json'),
-	jsonc: createKeywordMap('./inverters/json.json'),
 	javascript: createKeywordMap('./inverters/javascript.json'),
 	javascriptreact: createKeywordMap('./inverters/javascript.json'),
+	json: createKeywordMap('./inverters/json.json'),
+	jsonc: createKeywordMap('./inverters/json.json'),
+	shellscript: createKeywordMap('./inverters/shellscript.json'),
 	typescript: createKeywordMap('./inverters/javascript.json', './inverters/typescript.json'),
 	typescriptreact: createKeywordMap('./inverters/javascript.json', './inverters/typescript.json'),
 };
 
 const rotators = {
-	json: createKeywordMap('./rotators/json.json'),
-	jsonc: createKeywordMap('./rotators/json.json'),
 	javascript: createKeywordMap('./rotators/javascript.json'),
 	javascriptreact: createKeywordMap('./rotators/javascript.json'),
+	json: createKeywordMap('./rotators/json.json'),
+	jsonc: createKeywordMap('./rotators/json.json'),
+	shellscript: createKeywordMap('./inverters/shellscript.json'),
 	typescript: createKeywordMap('./rotators/javascript.json', './rotators/typescript.json'),
 	typescriptreact: createKeywordMap('./rotators/javascript.json', './rotators/typescript.json'),
 };

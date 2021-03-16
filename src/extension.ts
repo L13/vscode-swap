@@ -16,9 +16,9 @@ import { invert, rotate } from './change-keyword';
 
 export function activate (context:vscode.ExtensionContext) {
 
-	context.subscriptions.push(vscode.commands.registerCommand('l13Swap.invert', () => invert()));
+	context.subscriptions.push(vscode.commands.registerCommand('l13Swap.action.keyword.invert', () => invert()));
 
-	context.subscriptions.push(vscode.commands.registerCommand('l13Swap.rotate', () => rotate()));
+	context.subscriptions.push(vscode.commands.registerCommand('l13Swap.action.keyword.rotate', () => rotate()));
 	
 }
 

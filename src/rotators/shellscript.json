@@ -6,5 +6,9 @@
 	[
 		"declare",
 		"local"
+	],
+	[
+		"break",
+		"continue"
 	]
 ]

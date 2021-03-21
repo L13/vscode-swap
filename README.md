@@ -1,10 +1,13 @@
 # Swap Keywords
 
-Invert or rotate keywords in JavaScript and TypeScript.
+Invert or rotate keywords in JavaScript, Shell Script and TypeScript.
 
-## What's new in Swap Keywords 0.14.2
+## What's new in Swap Keywords 0.15.0
 
-- Changed display name from `L13 Swap` to `Swap Keywords`.
+- Added Shell Script keywords.
+- Added `break` and `continue` as opposite.
+- Changed command `l13Swap.invert` to `l13Swap.action.keyword.invert`.
+- Changed command `l13Swap.rotate` to `l13Swap.action.keyword.rotate`.
 
 ## Index
 

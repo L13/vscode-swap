@@ -18,5 +18,9 @@
 	[
 		"export",
 		"import"
+	],
+	[
+		"break",
+		"continue"
 	]
 ]

@@ -5,6 +5,7 @@ All notable changes to the "Swap Keywords" extension will be documented in this 
 
 ### Added
 - Added Shell Script keywords.
+- Added `break` and `continue` as opposite.
 
 ### Changed
 - Changed command `l13Swap.invert` to `l13Swap.action.keyword.invert`.

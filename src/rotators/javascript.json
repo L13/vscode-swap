@@ -23,5 +23,9 @@
 	[
 		"break",
 		"continue"
+	],
+	[
+		"super",
+		"this"
 	]
 ]

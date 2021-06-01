@@ -1,10 +1,11 @@
 # Change Log
 All notable changes to the "Swap Keywords" extension will be documented in this file.
 
-## [0.16.0] - 2021-03-28
+## [0.16.0] - 2021-06-13
 
 ### Added
 - Added `super` and `this` as opposite.
+- Added support for virtual and remote workspaces.
 
 ## [0.15.0] - 2021-03-21
 

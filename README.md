@@ -5,6 +5,7 @@ Invert or rotate keywords in JavaScript, Shell Script and TypeScript.
 ## What's new in Swap Keywords 0.16.0
 
 - Added `super` and `this` as opposite.
+- Added support for virtual and remote workspaces.
 
 ## Index
 

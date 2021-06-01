@@ -34,6 +34,16 @@
 		"onCommand:l13Swap.action.keyword.invert",
 		"onCommand:l13Swap.action.keyword.rotate"
 	],
+	"extensionKind": [
+		"ui",
+		"workspace"
+	],
+	"capabilities": {
+		"virtualWorkspaces": true,
+		"untrustedWorkspaces": {
+			"supported": true
+		}
+	},
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [

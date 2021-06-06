@@ -49,10 +49,12 @@
 		"commands": [
 			{
 				"command": "l13Swap.action.keyword.invert",
+				"category": "Swap Keywords",
 				"title": "Invert Keyword"
 			},
 			{
 				"command": "l13Swap.action.keyword.rotate",
+				"category": "Swap Keywords",
 				"title": "Rotate Keyword"
 			}
 		],
@@ -69,7 +71,19 @@
 				"command": "l13Swap.action.keyword.rotate",
 				"when": "editorTextFocus && !editorReadonly"
 			}
-		]
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "l13Swap.action.keyword.invert",
+					"when": "editorTextFocus && !editorReadonly"
+				},
+				{
+					"command": "l13Swap.action.keyword.rotate",
+					"when": "editorTextFocus && !editorReadonly"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",

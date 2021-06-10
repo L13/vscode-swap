@@ -5,7 +5,7 @@ All notable changes to the "Swap Keywords" extension will be documented in this 
 
 ### Added
 - Added `super` and `this` as opposite.
-- Added support for virtual and remote workspaces.
+- Added support for trusted, virtual and remote workspaces.
 
 ## [0.15.0] - 2021-03-21
 

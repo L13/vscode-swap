@@ -76,11 +76,11 @@
 			"commandPalette": [
 				{
 					"command": "l13Swap.action.keyword.invert",
-					"when": "editorTextFocus && !editorReadonly"
+					"when": "!editorReadonly"
 				},
 				{
 					"command": "l13Swap.action.keyword.rotate",
-					"when": "editorTextFocus && !editorReadonly"
+					"when": "!editorReadonly"
 				}
 			]
 		}

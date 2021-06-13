@@ -4,7 +4,8 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 
 import * as vscode from 'vscode';
-import { SimpleMap } from './types';
+
+import type { Dictionary } from './@types/basics';
 
 //	Variables __________________________________________________________________
 
@@ -50,13 +51,14 @@ export function rotate () {
 
 /**
  * Loads a JSON file and creates a map with name value pairs for each keyword.
+ *
  * @param pathname The path of the JSON file for the keaywords list.
  * @returns A map with name value pairs for each keyword.
  */
 
-function createKeywordMap (...pathnames:string[]) :SimpleMap {
+function createKeywordMap (...pathnames:string[]) {
 	
-	const keywords:SimpleMap = {};
+	const keywords:Dictionary<string> = {};
 	
 	pathnames.forEach((pathname) => {
 		
@@ -76,10 +78,11 @@ function createKeywordMap (...pathnames:string[]) :SimpleMap {
 
 /**
  * Replaces a selection if a keyword is aprt of a map.
+ *
  * @param keywords A map with keywords
  */
 
-function changeKeyword (keywords:{ [languageId:string]:SimpleMap }) {
+function changeKeyword (keywords:Dictionary<Dictionary<string>>) {
 	
 	const activeTextEditor = vscode.window.activeTextEditor;
 	
@@ -114,7 +117,7 @@ function changeKeyword (keywords:{ [languageId:string]:SimpleMap }) {
 		
 			const nextKeyword = languageKeywords[document.getText(range)];
 		
-			if (nextKeyword)  editBuilder.replace(range, nextKeyword);
+			if (nextKeyword) editBuilder.replace(range, nextKeyword);
 			
 		});
 		
@@ -136,6 +139,7 @@ function changeKeyword (keywords:{ [languageId:string]:SimpleMap }) {
 
 /**
  * Sorts an array of selections by the start offset.
+ *
  * @param document The active document in the editor.
  * @param selections An array with selections.
  * @returns Returns a sorted array with selections by position.

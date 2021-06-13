@@ -2,16 +2,15 @@
 
 Invert or rotate keywords in JavaScript, Shell Script and TypeScript.
 
-## What's new in Swap Keywords 0.15.0
+## What's new in Swap Keywords 0.16.0
 
-- Added Shell Script keywords.
-- Added `break` and `continue` as opposite.
-- Changed command `l13Swap.invert` to `l13Swap.action.keyword.invert`.
-- Changed command `l13Swap.rotate` to `l13Swap.action.keyword.rotate`.
+- Added `super` and `this` as opposite.
+- Added support for trusted, virtual and remote workspaces.
 
 ## Index
 
 1. [Features](#features)
+1. [How to use](#how-to-use)
 1. [Available Commands](#available-commands)
 1. [Keyboard Shortcuts](#keyboard-shortcuts)
 1. [Recommended Extensions](#recommended-extensions)
@@ -20,6 +19,10 @@ Invert or rotate keywords in JavaScript, Shell Script and TypeScript.
 
 * Select a keyword and change it to its opposite e.g. like a boolean from `true` to `false` or vice versa.
 * Select a keyword and change it to its next sibling e.g. like an accessor from `private` -> `protected` -> `public` -> `private` ... The rotation is always in alphabetical order.
+
+## How to use
+
+Select the keyword or place a caret in the keyword and run the command or press the keyboard shortcut. The keyword swap works also with multiple different keywords.
 
 ## Available Commands
 

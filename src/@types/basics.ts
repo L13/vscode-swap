@@ -12,8 +12,8 @@
 
 //	Exports ____________________________________________________________________
 
-export type Dictionary<T = any> = {
-	[key:string]:T,
+export type Dictionary <T = any> = {
+	[key: string]: T,
 };
 
 //	Functions __________________________________________________________________

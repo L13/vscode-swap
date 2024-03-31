@@ -1,7 +1,7 @@
 {
-	"name": "check-lint-rules",
+	"name": "gulp-tasks",
 	"version": "0.13.0",
-	"description": "Check local and extended ESLint and TSLint rules against each other",
+	"description": "Manage gulp tasks more simple.",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"

@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to the "Swap Keywords" extension will be documented in this file.
 
-## [0.16.0] - 2021-06-13
+## [0.16.0] - 2024-03-31
 
 ### Added
 - Added `super` and `this` as opposite.

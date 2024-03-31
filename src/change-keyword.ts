@@ -1,32 +1,41 @@
 //	Imports ____________________________________________________________________
 
-import { readFileSync } from 'fs';
-import { join } from 'path';
-
 import * as vscode from 'vscode';
+
+import { default as invertJavaScript } from './inverters/javascript';
+import { default as invertJSON } from './inverters/json';
+import { default as invertShellScript } from './inverters/shellscript';
+import { default as invertTypeScript } from './inverters/typescript';
+
+import { default as rotateJavaScript } from './rotators/javascript';
+import { default as rotateJSON } from './rotators/json';
+import { default as rotateShellScript } from './rotators/shellscript';
+import { default as rotateTypeScript } from './rotators/typescript';
 
 import type { Dictionary } from './@types/basics';
 
 //	Variables __________________________________________________________________
 
 const inverters = {
-	javascript: createKeywordMap('./inverters/javascript.json'),
-	javascriptreact: createKeywordMap('./inverters/javascript.json'),
-	json: createKeywordMap('./inverters/json.json'),
-	jsonc: createKeywordMap('./inverters/json.json'),
-	shellscript: createKeywordMap('./inverters/shellscript.json'),
-	typescript: createKeywordMap('./inverters/javascript.json', './inverters/typescript.json'),
-	typescriptreact: createKeywordMap('./inverters/javascript.json', './inverters/typescript.json'),
+	html: createKeywordMap(invertJavaScript),
+	javascript: createKeywordMap(invertJavaScript),
+	javascriptreact: createKeywordMap(invertJavaScript),
+	json: createKeywordMap(invertJSON),
+	jsonc: createKeywordMap(invertJSON),
+	shellscript: createKeywordMap(invertShellScript),
+	typescript: createKeywordMap(invertJavaScript, invertTypeScript),
+	typescriptreact: createKeywordMap(invertJavaScript, invertTypeScript),
 };
 
 const rotators = {
-	javascript: createKeywordMap('./rotators/javascript.json'),
-	javascriptreact: createKeywordMap('./rotators/javascript.json'),
-	json: createKeywordMap('./rotators/json.json'),
-	jsonc: createKeywordMap('./rotators/json.json'),
-	shellscript: createKeywordMap('./inverters/shellscript.json'),
-	typescript: createKeywordMap('./rotators/javascript.json', './rotators/typescript.json'),
-	typescriptreact: createKeywordMap('./rotators/javascript.json', './rotators/typescript.json'),
+	html: createKeywordMap(rotateJavaScript),
+	javascript: createKeywordMap(rotateJavaScript),
+	javascriptreact: createKeywordMap(rotateJavaScript),
+	json: createKeywordMap(rotateJSON),
+	jsonc: createKeywordMap(rotateJSON),
+	shellscript: createKeywordMap(rotateShellScript),
+	typescript: createKeywordMap(rotateJavaScript, rotateTypeScript),
+	typescriptreact: createKeywordMap(rotateJavaScript, rotateTypeScript),
 };
 
 //	Initialize _________________________________________________________________
@@ -56,23 +65,21 @@ export function rotate () {
  * @returns A map with name value pairs for each keyword.
  */
 
-function createKeywordMap (...pathnames:string[]) {
+function createKeywordMap (...keywords: string[][][]) {
 	
-	const keywords:Dictionary<string> = {};
+	const result: Dictionary<string> = {};
 	
-	pathnames.forEach((pathname) => {
-		
-		const lists:string[][] = JSON.parse(readFileSync(join(__dirname, pathname), 'utf-8'));
+	keywords.forEach((lists) => {
 		
 		lists.forEach((pair) => {
 			
-			pair.forEach((value, index) => keywords[value] = pair[index + 1] || pair[0]);
+			pair.forEach((value, index) => result[value] = pair[index + 1] || pair[0]);
 			
 		});
 		
 	});
-	
-	return keywords;
+		
+	return result;
 	
 }
 
@@ -82,7 +89,7 @@ function createKeywordMap (...pathnames:string[]) {
  * @param keywords A map with keywords
  */
 
-function changeKeyword (keywords:Dictionary<Dictionary<string>>) {
+function changeKeyword (keywords: Dictionary<Dictionary<string>>) {
 	
 	const activeTextEditor = vscode.window.activeTextEditor;
 	
@@ -93,14 +100,14 @@ function changeKeyword (keywords:Dictionary<Dictionary<string>>) {
 	
 	if (!languageKeywords) return;
 	
-	let selections = activeTextEditor.selections;
-	const empties:boolean[] = [];
+	let selections = [...activeTextEditor.selections];
+	const empties: boolean[] = [];
 	
 	if (!selections.length) return;
 	
 	selections = sortSelections(document, selections);
 	
-	activeTextEditor.edit((editBuilder:vscode.TextEditorEdit) => {
+	activeTextEditor.edit((editBuilder: vscode.TextEditorEdit) => {
 		
 		selections.forEach((selection) => {
 
@@ -123,7 +130,7 @@ function changeKeyword (keywords:Dictionary<Dictionary<string>>) {
 		
 	}).then(() => {
 		
-		let newSelections = activeTextEditor.selections;
+		let newSelections = [...activeTextEditor.selections];
 	
 		newSelections = sortSelections(document, newSelections);
 		
@@ -145,7 +152,7 @@ function changeKeyword (keywords:Dictionary<Dictionary<string>>) {
  * @returns Returns a sorted array with selections by position.
  */
 
-function sortSelections (document:vscode.TextDocument, selections:vscode.Selection[]) {
+function sortSelections (document: vscode.TextDocument, selections: vscode.Selection[]) {
 	
 	return selections.sort((selectionA, selectionB) => {
 		

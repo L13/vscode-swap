@@ -1,8 +1,16 @@
-// See https://go.microsoft.com/fwlink/?LinkId=733558
-// for the documentation about the tasks.json format
 {
 	"version": "2.0.0",
 	"tasks": [
+		{
+			"type": "gulp",
+			"task": "build & watch",
+			"problemMatcher": []
+		},
+		{
+			"type": "gulp",
+			"task": "build",
+			"problemMatcher": []
+		},
 		{
 			"type": "gulp",
 			"task": "watch",
@@ -10,7 +18,12 @@
 		},
 		{
 			"type": "gulp",
-			"task": "build",
+			"task": "clean",
+			"problemMatcher": []
+		},
+		{
+			"type": "npm",
+			"script": "compile",
 			"problemMatcher": []
 		}
 	]
